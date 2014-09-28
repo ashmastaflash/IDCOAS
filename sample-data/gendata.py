@@ -11,6 +11,8 @@ import re
 import sys
 import time
 import random
+import logging
+from logging.handlers import SysLogHandler
 
 def main(argv):
     # set vars
@@ -56,10 +58,21 @@ def main(argv):
     # we'll do a while true with a timer in it
     while True:
         fire_message_batch(configitems)
-        time.sleep(1)
+        time.sleep(5)
 
 def send_message(src,dst,pathogen):
-    print "Pathogen Detected! Source: ",src," Pathogen: ",pathogen
+    logstring = "Source:",src," ; Pathogen:",pathogen
+    #print logstring
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    syslog = SysLogHandler(address=(dst,514))
+    #formatter = logging.Formatter('%(name)s: %(levelname)s %(message)s')
+    #syslog.setFormatter(formatter)
+    logger.addHandler(syslog)
+    logger.info(logstring)
+    syslog.flush()
+    #syslog.release()
+    syslog.close()
 
 def fire_message_batch(configitems):
     # set vars
@@ -126,6 +139,7 @@ def configfile_is_sane(configfile):
             return(False,'')
         else:
             pass
+    f.close()
     return(True,conf_items)
 
 
