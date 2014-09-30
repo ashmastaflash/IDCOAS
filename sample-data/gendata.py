@@ -12,7 +12,7 @@ import sys
 import time
 import random
 import logging
-from logging.handlers import SysLogHandler
+import logging.handlers
 
 def main(argv):
     # set vars
@@ -54,30 +54,29 @@ def main(argv):
         sys.exit(2)
     else:
         pass
+    # set up the logging object
+    setup_logger(configitems['destination'])
     # now we get down to the reason we're here
     # we'll do a while true with a timer in it
     while True:
         fire_message_batch(configitems)
-        time.sleep(5)
+        time.sleep(1)
 
-def send_message(src,dst,pathogen):
-    logstring = "Source:",src," ; Pathogen:",pathogen
-    #print logstring
-    logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
-    syslog = SysLogHandler(address=(dst,514))
-    #formatter = logging.Formatter('%(name)s: %(levelname)s %(message)s')
-    #syslog.setFormatter(formatter)
-    logger.addHandler(syslog)
-    logger.info(logstring)
-    syslog.flush()
-    #syslog.release()
-    syslog.close()
+def send_message(src,pathogen):
+    logstring = "Souce: ",src," ; Pathogen: ",pathogen
+    logging.info(logstring)
+
+def setup_logger(dst):
+    global rootLogger
+    rootLogger = logging.getLogger('')
+    rootLogger.setLevel(logging.DEBUG)
+    socketHandler = logging.handlers.SysLogHandler(address=(dst,514))
+    rootLogger.addHandler(socketHandler)
+    logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 def fire_message_batch(configitems):
     # set vars
     src = configitems['source']
-    dst = configitems['destination']
     hot = configitems['danger']
     cld = configitems['noise'].split(',')
     num = int(configitems['frequency'])
@@ -88,11 +87,11 @@ def fire_message_batch(configitems):
     # puke out the noise
     for x in range(0,nsr):
         pathogen = random.choice(cld)
-        send_message(src,dst,pathogen)
+        send_message(src,pathogen)
     #puke out the hot stuff
     for x in range(0,snr):
         pathogen = hot
-        send_message(src,dst,pathogen)
+        send_message(src,pathogen)
     return
 
 def configfile_is_sane(configfile):
