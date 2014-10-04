@@ -63,7 +63,7 @@ def main(argv):
         time.sleep(1)
 
 def send_message(src,pathogen):
-    logstring = "Souce: ",src," ; Pathogen: ",pathogen
+    logstring = "Souce=",src," | Pathogen=",pathogen
     logging.info(logstring)
 
 def setup_logger(dst):
