@@ -50,7 +50,7 @@ def main(argv):
     # sanity check
     config_sanity , configitems = configfile_is_sane(configfile)
     if not config_sanity:
-        print "Insane in the membrane.  Check yo config, sucka"
+        print "Insane in the membrane.  Check yer config, yo"
         sys.exit(2)
     else:
         pass
@@ -59,8 +59,8 @@ def main(argv):
     # now we get down to the reason we're here
     # we'll do a while true with a timer in it
     while True:
-        fire_message_batch(configitems)
-        time.sleep(1)
+        fire_message_batch(configitems,configfile)
+        time.sleep(10)
 
 def send_message(src,pathogen):
     logstring = "Source="+src+" | Pathogen="+pathogen
@@ -74,7 +74,7 @@ def setup_logger(dst):
     rootLogger.addHandler(socketHandler)
     logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
-def fire_message_batch(configitems):
+def fire_message_batch(configitems,configfile):
     # set vars
     src = configitems['source']
     hot = configitems['danger']
@@ -82,8 +82,9 @@ def fire_message_batch(configitems):
     num = int(configitems['frequency'])
     snr = int(configitems['snr'])
     nsr = (num-snr)
-    print "Number of commons to send: ",nsr
-    print "Number of uncommons to send: ",snr
+    print "Config file: "+configfile
+    print "Number of commons to send: "+nsr
+    print "Number of uncommons to send: "+snr
     # puke out the noise
     for x in range(0,nsr):
         pathogen = random.choice(cld)
