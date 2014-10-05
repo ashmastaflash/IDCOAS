@@ -3,13 +3,13 @@
   <Folder>
     <GroundOverlay>
       <Icon>
-        <href>/Users/ash/Desktop/Ebola-10pm.list.png</href>
+        <href>/Users/ash/Desktop/Ebola-11pm.list.png</href>
       </Icon>
       <LatLonBox>
-        <north>40.9066041602836705</north>
-        <south>39.9093803241605229</south>
-        <east>-4.1879707840568665</east>
-        <west>-3.1923660061370307</west>
+        <north>52.0097300060477394</north>
+        <south>39.9111032739308769</south>
+        <east>-4.1910480639599745</east>
+        <west>2.8308048811785560</west>
         <rotation>0</rotation>
       </LatLonBox>
     </GroundOverlay>

@@ -46,7 +46,7 @@ def main(argv):
 def write_kml(coords,kml_filename):
     print kml_filename
     hm = heatmap.Heatmap()
-    hm.heatmap(coords,scheme='fire')
+    hm.heatmap(coords,scheme='classic',opacity=199)
     hm.saveKML(kml_filename)
 
 def build_coordlist(iplist,gip_file):
