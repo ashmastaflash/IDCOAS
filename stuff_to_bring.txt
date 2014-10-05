@@ -1,5 +1,0 @@
-Packing list:
-Virtualization server
-Wireless bridge
-3x cat5 cables
-Ethernet adapter for Mac
