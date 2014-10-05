@@ -13,7 +13,7 @@ Project goals:
 + Create an outbreak simulator to generate detection events for feeding into OSSIM and OpenGraphiti ...DONE
 
 Participants:
-+@FraleyLab
-+@ashmastaflash
++ @FraleyLab
++ @ashmastaflash
   
   
