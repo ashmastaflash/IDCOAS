@@ -83,8 +83,8 @@ def fire_message_batch(configitems,configfile):
     snr = int(configitems['snr'])
     nsr = (num-snr)
     print "Config file: "+configfile
-    print "Number of commons to send: "+nsr
-    print "Number of uncommons to send: "+snr
+    print "Number of commons to send: "+str(nsr)
+    print "Number of uncommons to send: "+str(snr)
     # puke out the noise
     for x in range(0,nsr):
         pathogen = random.choice(cld)
