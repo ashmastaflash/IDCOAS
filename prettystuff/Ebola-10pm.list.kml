@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Folder>
+    <GroundOverlay>
+      <Icon>
+        <href>/Users/ash/Desktop/Ebola-10pm.list.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>40.9038072422159686</north>
+        <south>39.9098621836726721</south>
+        <east>-4.1906636516144022</east>
+        <west>-3.1985037363281443</west>
+        <rotation>0</rotation>
+      </LatLonBox>
+    </GroundOverlay>
+  </Folder>
+</kml>
