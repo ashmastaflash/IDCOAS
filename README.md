@@ -15,6 +15,10 @@ NOTE: This is all sample data, not harvested from any sort of real occurrence or
 
 ![Project Drawing](https://raw.github.com/ashmastaflash/IDCOAS/master/ProjectDrawing.jpg)
 ![Initial Outbreak](https://raw.github.com/ashmastaflash/IDCOAS/master/prettystuff/Screenshots/InitialOutbreak.png)
+![Trend Graph](https://raw.github.com/ashmastaflash/IDCOAS/master/prettystuff/Screenshots/StackTrend.png)
+![Line Graph](https://raw.github.com/ashmastaflash/IDCOAS/master/prettystuff/Screenshots/LineTrend.png)
+![Alarms](https://raw.github.com/ashmastaflash/IDCOAS/master/prettystuff/Screenshots/Alarms.png)
+![Correlated Events](https://raw.github.com/ashmastaflash/IDCOAS/master/prettystuff/Screenshots/CorrelatedEvents.png)
 
 Participants:
 + @FraleyLab
