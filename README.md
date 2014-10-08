@@ -11,6 +11,8 @@ Project goals:
 + Create heat maps for outbreaks over time ...DONE
 + Create an outbreak simulator to generate detection events for feeding into OSSIM and OpenGraphiti ...DONE
 
+NOTE: This is all sample data, not harvested from any sort of real occurrence or disease outbreak.
+
 ![Project Drawing](https://raw.github.com/ashmastaflash/IDCOAS/master/ProjectDrawing.jpg)
 ![Initial Outbreak](https://raw.github.com/ashmastaflash/IDCOAS/master/prettystuff/Screenshots/InitialOutbreak.png)
 
